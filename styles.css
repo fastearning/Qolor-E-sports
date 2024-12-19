@@ -129,6 +129,7 @@ width:100%;
     height:50vh;
     width:45%;
     
+    
 }
 .main_image{
     background:transparent;
@@ -137,8 +138,9 @@ width:100%;
     justify-content: center;
 }
 .main_image img{
-height:500px;
-width: 500px;
+height:450px;
+width:450px;
+border-radius:50%;
 filter: saturate(2);
 }
 .main_content{
@@ -275,20 +277,25 @@ text-align: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom:30px;
+    padding:10px;
 }
 .features .features_info div{
-background:#012529;
+background:#02363b;
 color:rgb(15, 5, 5);
 height:270px;
-margin:20px;
+margin:30px;
 padding:20px;
-border: 5px inset lightblue;
 border-radius:10PX;
 padding: 10px 10px 10px 10px;
 position:relative;
-flex: 1 1 45%;
-box-shadow: 3px 3px 0 0 lightblue;
+flex: 1 1 25%;
+box-shadow: 0px 10px#0a8d73;
+border: 5px solid #0a8d73;
 }
+
+
+
+
 .features .features_info div h2{
     color:#16C95F;
     font-size:20px;
@@ -320,6 +327,9 @@ transition: .3s ease-in-out;
 
 }
 
+#uiimage{
+    border-radius:0;
+}
 .features .features_info div h2{
     font-family: QolorBold;
 }
@@ -378,8 +388,8 @@ transition: .3s ease-in-out;
     overflow: hidden;
     position: relative;
     background:#012529;
-    border: 5px inset lightblue;
-    box-shadow: 3px 3px 0 0 lightblue;
+    border: 5px solid #0a8d73;
+    box-shadow: 0px 10px 0 0 #0a8d73;
     border-radius:10px;
 }
 .app_info .future_products div h2{
@@ -439,8 +449,10 @@ border-radius:20px;
 
 
 .app_num h1{
+    color:White;
+    font-family: Qolor;
+    font-size:25px;
     text-align: center;
-    color:white;
 }
 .app_data{
     height:350px;
@@ -448,6 +460,8 @@ border-radius:20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+   
 }
 .app_data div{
     height:150px;
@@ -459,6 +473,8 @@ border-radius:20px;
     flex-wrap: wrap;
     margin-left: 20px;
     margin-right: 20px;
+    background: #02363b;
+    flex: 1 1 35%;
 }
 .app_data div h1{
  font-size:30px;
@@ -508,7 +524,7 @@ border-radius:20px;
 } 
 .footer .ftinner ul{
     list-style: none;
-    height:200px;
+    height:fit-content;
     width:100%;
     display:flex;
     flex-direction:column;
