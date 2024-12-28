@@ -138,8 +138,8 @@ width:100%;
     justify-content: center;
 }
 .main_image img{
-height:450px;
-width:450px;
+height:30vw;
+width:30vw;
 border-radius:50%;
 filter: saturate(2);
 }
@@ -158,21 +158,23 @@ filter: saturate(2);
     font-family: QolorBold;
     margin-bottom: 30px;
     text-align: center;
+    font-size:2vw;
 }
 .main_content p{
     color:#16C95F;
     font-family: Qolor;
+    font-size:1vw;
     
 }
 .main_content a{
     height:45px;
-    width:250px;
+    width:18vw;
     margin-top:50px;
     color:white;
     background:#16C95F;
     border-radius:12px;
     border:3px solid white;
-    font-size:20px;
+    font-size:1.5vw;
     font-family:QolorBold;
     text-decoration:none;
     line-height:40px;
@@ -192,6 +194,7 @@ filter: saturate(2);
     color:white;
     background:transparent;
     text-align: center;
+    margin-top:20px;
 }
 .partners #our_parteners{
     height:200px;
@@ -835,7 +838,7 @@ margin-bottom:10px;
     color:#16C95F;
     margin-bottom:35px;
     font-family: QolorBold;
-    font-size:25px;
+    font-size:2vw;
   }
 
   #floating_button a{
@@ -843,7 +846,7 @@ margin-bottom:10px;
     text-align:center;
     color:white;
     margin-top:15px;
-    font-size:18px;
+    font-size:1vw;
     font-family:qolor;
     background:#16C95F;
     height:35px;
