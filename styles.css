@@ -139,7 +139,7 @@ width:100%;
 }
 .main_image img{
 height:25vw;
-width:20vw;
+width:25vw;
 border-radius:50%;
 filter: saturate(2);
 }
