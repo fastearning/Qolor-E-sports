@@ -138,8 +138,8 @@ width:100%;
     justify-content: center;
 }
 .main_image img{
-height:40vw;
-width:40vw;
+height:25vw;
+width:20vw;
 border-radius:50%;
 filter: saturate(2);
 }
