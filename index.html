@@ -1,200 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="mobile.css">
-    <link rel="icon" type="image/png" href="qolor e-sports.jpg">
-    <title>Qolor E-Sports - Play And Earn</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qolor Esports App – Download & Play</title>
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0; padding: 0;
+      font-family: Arial, sans-serif;
+      background: #1e1e1e; color: #f1f1f1;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header {
+      background: #2c2c2c;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #9b59b6;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+      color: #9b59b6;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 28px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #ccc;
+    }
+    .btn-download {
+      background: #27ae60;
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+    .btn-download:hover {
+      background: #1e8449;
+    }
+
+    /* Feature Sections */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .feature-card {
+      background: #2c2c2c;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    }
+    .feature-card h3 {
+      color: #27ae60;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c2c2c;
+      font-size: 14px;
+      color: #888;
+    }
+    footer a {
+      color: #27ae60;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+    }
+  </style>
 </head>
 <body>
-  <div class="container" id="home">
-    <div class="nav">
-      <div><img src="qolor e-sports.jpg" alt="logo loading" class="logo"><span>Qolor<br>E-Sports</span></div>
-      <div class="menu" id="menu" >
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="parteners.html">Partners</a></li>
-          <li><a href="tutorials.html">Tutorials</a></li>
-        </ul>
-      </div>
-      <h1 class="menu_btn" id="menu_btn">☰</h1>
-    </div>
-    <div class="content">
-      <div class="main_image">
-        <img id="home" src="qolor e-sports.jpg">
-      </div>
-      <div class="main_content">
-        <h1>Qolor E-Sports Welcomes You</h1>
-        <p>Join The ultimate Community Of E-Sports Tournaments,<br>Play E-sports Tournaments and Earn Real Cash
-        </p>
-         <div class="sonar-wrapper">
-          <a class="sonar-emitter" href="https://esports.qolor.in/QolorNew.apk">
-            <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" fill="white" style="background:transparent;" width="20" height="20"><path d="M19,0H5A5.006,5.006,0,0,0,0,5V19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V5A5.006,5.006,0,0,0,19,0ZM17.707,14.535l-3.586,3.586h0a3,3,0,0,1-4.243,0L6.293,14.535l-.024-.025a1,1,0,1,1,1.438-1.389L11,16.414,10.993,6a1,1,0,0,1,2,0L13,16.413l3.293-3.292a1,1,0,1,1,1.414,1.414Z"/></svg>
-             &nbspDownload Now
-            <div class="sonar-wave sonar-wave1"></div>
-            <div class="sonar-wave sonar-wave2"></div>
-            <div class="sonar-wave sonar-wave3"></div>
-            <div class="sonar-wave sonar-wave4"></div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div class="partners">
-    <div id="our_parteners">
-        <div class="card">
-      <img src="logo.png">
-      <div class="card_info">
-      <h1>Qolor Co.</h1>
-      <p>Qolor co. Is Our Trusted Partner that Provide You <br>ways to earn free coins to play Tournaments</p>
-      <a href="https://qolor.co.in">Check Out</a>
-    </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="features">
-  <h1>Why Choose Us</h1>
-    <div class="features_info">
-      <div><img src="free.png"><h2>Free Matches</h2><p>We Host daily Free Matches for our free users</p></div>
-      <div><img src="lowhigh.png"><h2>Low Entry High Prize</h2><p>Get entry in Low And got High Prizes</p></div>
-      <div><img src="withdrwal.png"><h2>Fast Withdrawals</h2><p>Super Fast Withdrawals With Multiple Cashout options</p></div>
-      <div><img src="trust.png"><h2>Secure And Reliable</h2><p>Your data’s safety is our top priority—always encrypted, always protected</p></div>
-      <div><img src="fairplay.png"><h2>Fair Play Supporters</h2><p>We Take Action Fast On players who violet our fair play policy </p></div>
-      <div><img src="contact.jpg"><h2>24/7 Support</h2><p>Feel Free To Contact Us,We are always happy to help you</p></div>
+<header>
+  <h1>Qolor Esports</h1>
+</header>
 
-    </div>
-  </div>
-  <div class="imgslider">
-  <h1>App screenshots and info</h1>
-<div class="slider">
-        <div class="slides" id="swipe">
-          <div class="slide"><div class="screenshot"><img src="ss1.jpg" alt="Image 1"></div><div class="steps"><h1>How to Create An Account</h1><p>Follow Given Step To Make It Done</p><ul>
-            <li>1.Click On Register</li>
-            <li>2.Fill Up Details</li>
-            <li>3.Click Sign Up</li>
-            <li>4.Verify Your Email</li>
-            <li>5.Use Promo Code If You Have</li>
-            <li>6.And Your Are Done.</li>
-          </ul></div></div>
-          <div class="slide"><div class="screenshot"><img src="ss2.jpg" alt="Image 2"></div><div class="steps"><h1>Application Home Page</h1><p>Expolre Home Page</p><ul>
-          </div></div>
-          <div class="slide"><div class="screenshot"><img src="ss3.jpg" alt="Image 3"></div><div class="steps"><h1>Free coins</h1><p>You can earn free coins by referring your friend</p><ul>
-           </div></div>
-          <div class="slide"><div class="screenshot"><img src="ss4.jpg" alt="Image 3"></div><div class="steps"><h1>Your Profile</h1><p>Here Your can follow you all progress and edit you profile</p><ul>
-           </div></div>
-          <div class="slide"><div class="screenshot"><img src="ss5.jpg" alt="Image 3"></div><div class="steps"><h1>Wallet Section</h1><p> Follow You Financial activities here like purchase and redeem coins</p><ul>
-           </div></div>
-          <div class="slide"><div class="screenshot"><img src="ss6.jpg" alt="Image 3"></div><div class="steps"><h1>How To Buy Coins</h1><p>Go To Tutorial Page to learn how to add coins</p><ul>
-            <li><a href="http://esports.qolor.co.in/tutorials.html">Watch Now</a></li>
-          </ul></div></div>
-          <div class="slide"><div class="screenshot"><img src="ss7.jpg" alt="Image 3"></div><div class="steps"><h1>How to withdraw Coins</h1><p>Go To Tutorial Page to learn how to withdraw coins</p><ul>
-            <li><a href="http://esports.qolor.co.in/tutorials.html">Watch Now</a></li>
-          </ul></div></div>
-          <div class="slide"><div class="screenshot"><img src="ss8.jpg" alt="Image 3"></div><div class="steps"><h1>Contact Us</h1><p>Follow Given Step To Make It Done</p><ul>
-            <li>Go To Me Section</li>
-            <li>tap on contact us</li>
-            <li>you will find our email and whatsapp number there</li>
-          </ul></div></div>
-        </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;Pre</button>
-        <button class="next" onclick="changeSlide(1)">Next&#10095;</button>
-      </div>
-      </div>
-  <div class="app_info">
-  <h1>Future Partners and Services</h1>
-<div class="future_products">
-  <div class="f"><h2>Qolor Co.</h2><img src="logo.png"><a target="_blank" href="https://qolor.co.in"><h1 class="fake_btn">Check Out</h1></a></div>
-  <div class="f"><h2>Qolor 11</h2><img src="logo.png"><h1 class="fake_btn">More Info</h1><div class="info" id="in"><h1>Qolor 11</h1><p>Qolor 11 Will Be a ultimate Free earning  <br>App to play fantasy sports</p></p></div></div>
-  <div class="f"><h2>Qolor Links</h2><img src="logo.png"><h1 class="fake_btn">More Info</h1><div class="info" id="in"><h1>Qolor Links</h1><p>Qolor Links Will Be a ultimate Free earning  <br>Webiste For Publishers</p></p></div></div>
-</div>
-</div>
-<div class="app_num">
-<h1>We Can Feel Proud For</h1>
-  <div class="app_data">
-  <div><h1 id="num" data-val="1000">0</h1><span>Participants</span></div>
-  <div><h1 id="num" data-val="1000">0</h1><span>Tournaments Played</span></div>
-  <div><h1 id="num" data-val="1000">0</h1><span>₹Paid</span></div>
-  <div><h1 id="num" data-val="1000">0</h1><span>Free Giveaway</span></div>
-</div>
-</div>
-</div>
-<div class="partners">
-    <h1>Reviews</h1>
-    <marquee scrollamount="10" >
-    <div id="our_parteners">
-     
-        <div class="card">
-        <img src="qolor e-sports.jpg">
-      <div class="card_info">
-      <h1>About Qolor Co.</h1>
-      <p>Qolor co. Is Our Trusted that Provide You ways to<br> earn free coins to play Tournaments</p>
-    </div>
-      </div>
-      <div class="card">
-        <img src="qolor e-sports.jpg">
-      <div class="card_info">
-      <h1>About Qolor Co.</h1>
-      <p>Qolor co. Is Our Trusted that Provide You ways to<br> earn free coins to play Tournaments</p>
-    </div>
-      </div>
-      <div class="card">
-        <img src="qolor e-sports.jpg">
-      <div class="card_info">
-      <h1>About Qolor Co.</h1>
-      <p>Qolor co. Is Our Trusted that Provide You ways to<br> earn free coins to play Tournaments</p>
-    </div>
-      </div>
-  
-    </div>
-</marquee>
-  </div>
-<div id="floating_button">
-  <h1>Join us Today, by clicking below</h1>
-  <a href=" https://esports.qolor.in/QolorNew.apk">Download Now</a>
-</div>
-<div class="footer">
-<div class="ftinner">
-  <h1>About</h1>
-  <img src="qolor e-sports.jpg">
-  <p>Qolor E-Sports is an app that run by Qolor Co., Qolor E-Sports Host both free and paid E-Sports Tournaments </p>
-</div>
-<div class="ftinner">
-  <h1>Follow  Us</h1>
-  <ul>
-    <li><a target="_blank" href="https://www.rooter.gg/profile/2079927184">Rooter</a></li>
-    <li><a target="_blank" href="https://www.youtube.com/@QolorE-Sports">Youtube</a></li>
-       <li><a target="_blank" href="https://www.instagram.com/qolorcommunity/">Instagram</a></li>
-          <li><a target="_blank" href="https://t.me/qoloresports">Telegram</a></li>
-          <li><a target="_blank" href="whatsapp.com/channel/0029VavitLe7j6gFqEnPZE0D">WhatsApp</a></li>
-  </ul>
-</div> 
-<div class="ftinner">
-  <h1>Pages</h1>
-  <ul>
-    <li><a href="privacy.html">privacy policy</a></li>
-    <li><a href="terms.html">Terms of uses</a></li>
-    <li><a href="fairplay-p.html">Fair Play Policy</a></li>
-       <li><a href="refund-p.html">Refund Policy</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div>
-</div>
-<div class="main_footer">©&nbsp<span id="year">2024</span>. Qolor Co. All rights reserved.</div>
+<section class="hero">
+  <h2>Play Daily. Win Big.</h2>
+  <p>Join Free Fire tournaments, compete with players like you, and win amazing rewards—right from your fingertips.</p>
+  <a href="https://play.google.com/store/apps/details?id=com.qoloresports" target="_blank" class="btn-download">📥 Download for Android</a>
+</section>
 
-<div id="menu_shutter">
-  <ul>
-    <li><a  href="#home">Home</a></li>
-    <li><a  href="about.html">About</a></li>
-    <li><a  href="parteners.html">Partners</a></li>
-    <li><a  href="tutorials.html">Tutorials</a></li>
-  </ul>
-</div>
-<a  class="gototop" href="#home" id="top">➤</a>
-<script src="script.js"></script>
+<section class="features">
+  <div class="feature-card">
+    <h3>Daily Free Matches</h3>
+    <p>Take part in free daily tournaments and showcase your skills.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Low Fees, High Rewards</h3>
+    <p>Low entry fees, but the prize pool is high—play smart, win big.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Fast Withdrawals</h3>
+    <p>Get your winnings into your wallet in no time, securely.</p>
+  </div>
+  <div class="feature-card">
+    <h3>Secure & Fair</h3>
+    <p>We enforce fair play policies and protect your data.</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Qolor Esports | Support: <a href="mailto:support@qoloresports.com">support@qoloresports.com</a>
+</footer>
+
+<script>
+  // Optional popup to encourage downloads if visiting on desktop
+  if (!/mobile/i.test(navigator.userAgent)) {
+    setTimeout(() => {
+      alert("For the best experience, download the Qolor Esports app!");
+    }, 2000);
+  }
+</script>
+
 </body>
-</html>
+    </html>
+    
