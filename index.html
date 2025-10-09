@@ -1,164 +1,250 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
   <title>Qolor Esports App – Download & Play</title>
   <style>
-    /* Base Styles */
-    body {
-      margin: 0; padding: 0;
-      font-family: Arial, sans-serif;
-      background: #1e1e1e; color: #f1f1f1;
+    :root {
+      --bg: #0f0f12;
+      --card-bg: #1a1a1f;
+      --accent: #00b4ff;
+      --text: #f2f2f2;
+      --muted: #999;
+      --green: #2ecc71;
     }
-    a { text-decoration: none; color: inherit; }
 
-    /* Header */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
     header {
-      background: #2c2c2c;
-      padding: 20px;
       text-align: center;
+      padding: 25px 10px;
+      background: var(--card-bg);
+      box-shadow: 0 2px 10px rgba(0, 180, 255, 0.2);
     }
-    header img {
-      width: 80px;
-      height: auto;
-      margin-bottom: 10px;
-    }
+
     header h1 {
       margin: 0;
-      font-size: 32px;
-      color: skyblue;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      color: var(--accent);
+      text-transform: uppercase;
+      text-shadow: 0 0 10px var(--accent);
     }
 
-    /* Hero Section */
+    /* HERO SECTION */
     .hero {
       text-align: center;
-      padding: 60px 20px;
-    }
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 16px;
-      color: skyblue;
-    }
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 28px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #ccc;
-    }
-    .btn-download {
-      background:skyblue;
-      color: #fff;
-      padding: 14px 28px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s;
-      display: inline-block;
-    }
-    .btn-download:hover {
-      background: #1e8449;
+      padding: 70px 20px 50px;
+      background: radial-gradient(circle at center, #111 0%, #0a0a0d 80%);
+      animation: fadeIn 1.5s ease;
     }
 
-    /* Feature Sections */
+    .hero img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px var(--accent);
+      margin-bottom: 25px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      color: var(--accent);
+      text-shadow: 0 0 8px var(--accent);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 15px auto 30px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .btn-download:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--accent);
+    }
+
+    /* FEATURES */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      max-width: 900px;
-      margin: 40px auto;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 60px auto;
       padding: 0 20px;
     }
+
     .feature-card {
-      background: #2c2c2c;
-      padding: 20px;
-      border-radius: 10px;
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 12px;
       text-align: center;
-      box-shadow: 0 0 8px rgba(0,0,0,0.5);
-    }
-    .feature-card h3 {
-      color: #27ae60;
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-    .feature-card p {
-      font-size: 14px;
-      color: #ccc;
-    }
-    img{
-      height:250px;
-      width:250px;
-      border-radius:50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
     }
 
-    /* Footer */
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px var(--accent);
+    }
+
+    .feature-card h3 {
+      color: var(--accent);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* CTA SECTION */
+    .cta {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(90deg, rgba(0,180,255,0.1), rgba(0,180,255,0.05));
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .cta h3 {
+      color: var(--accent);
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 20px;
-      background: #2c2c2c;
+      padding: 25px 10px;
+      background: var(--card-bg);
+      color: var(--muted);
       font-size: 14px;
-      color: #888;
-    }
-    footer a {
-      color: #27ae60;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* Responsive */
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      color: var(--accent);
+      font-size: 20px;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px var(--accent);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 600px) {
-      .hero h2 { font-size: 28px; }
-      .hero p { font-size: 16px; }
+      .hero h2 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .btn-download { font-size: 16px; padding: 12px 24px; }
     }
   </style>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-300">
+<body>
 
-<header class="text-blue-600 bg-gray-300">
-    <h1>Qolor Esports</h1>
+<header>
+  <h1>Qolor Esports</h1>
 </header>
 
-<section class="hero bg-gray-300">
-  <img src="qolor esports.jpg">
-  <h2 class="text-blue-600">Play Daily. Win Big.</h2>
-  <p>Join Free Fire tournaments, compete with players like you, and win amazing rewards—right from your fingertips.</p>
-  <a href="https://esports.qolor.in/qolor.apk" target="_blank" class="btn-download bg-blue-600">📥 Download for Android</a>
+<section class="hero">
+  <img src="qolor esports.jpg" alt="Qolor Esports Logo">
+  <h2>Play Daily. Win Big.</h2>
+  <p>Join Free Fire tournaments, compete with real players, and win amazing rewards — right from your fingertips.</p>
+  <a href="https://esports.qolor.in/qolor.apk" target="_blank" class="btn-download">
+    <i class="fa-solid fa-download"></i> Download for Android
+  </a>
 </section>
 
-<section class="features bg-gray-300">
+<section class="features">
   <div class="feature-card">
-    <h3 class="text-blue-600">Daily Free Matches</h3>
-    <p>Take part in free daily tournaments and showcase your skills.</p>
+    <h3><i class="fa-solid fa-calendar-day"></i> Daily Free Matches</h3>
+    <p>Participate in daily tournaments and test your gaming skills against others.</p>
   </div>
   <div class="feature-card">
-    <h3 class="text-blue-600">Low Fees, High Rewards</h3>
-    <p>Low entry fees, but the prize pool is high—play smart, win big.</p>
+    <h3><i class="fa-solid fa-trophy"></i> High Rewards</h3>
+    <p>Win big with low entry fees and massive prize pools. Compete. Win. Celebrate.</p>
   </div>
   <div class="feature-card">
-    <h3 class="text-blue-600">Fast Withdrawals</h3>
-    <p>Get your winnings into your wallet in no time, securely.</p>
+    <h3><i class="fa-solid fa-bolt"></i> Fast Withdrawals</h3>
+    <p>Instant and secure withdrawal of your winnings directly to your wallet.</p>
   </div>
   <div class="feature-card">
-    <h3 class="text-blue-600">Secure & Fair</h3>
-    <p>We enforce fair play policies and protect your data.</p>
+    <h3><i class="fa-solid fa-shield-halved"></i> Secure & Fair</h3>
+    <p>We ensure fair gameplay and top-tier security for all Qolor Esports users.</p>
   </div>
 </section>
 
-<footer> 
-  © 2025 Qolor Esports | Support: <a href="mailto:support@qoloresports.com">support@qoloresports.com</a>
-</footer> 
+<section class="cta">
+  <h3>🔥 Ready to Join the Arena?</h3>
+  <p>Download the Qolor Esports app today and start your journey to becoming a Free Fire champion!</p>
+  <a href="https://esports.qolor.in/qolor.apk" target="_blank" class="btn-download">
+    <i class="fa-brands fa-android"></i> Get the App Now
+  </a>
+</section>
 
-</body> 
+<footer>
+  © 2025 Qolor Esports • All Rights Reserved<br>
+  Support: <a href="mailto:support@qoloresports.com">support@qoloresports.com</a>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-discord"></i></a>
+    <a href="#"><i class="fab fa-telegram"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+</body>
 </html>
-
-    
-
-
-
-
-
-
-
