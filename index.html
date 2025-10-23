@@ -3,252 +3,349 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qolor Esports App – Download & Play</title>
+  <meta name="description" content="Qolor eSports — Compete in tournaments, show your skills, and win exciting rewards. Download the app now!" />
+  <title>Qolor eSports - Play. Compete. Win Rewards.</title>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
     :root {
-      --bg: #0f0f12;
-      --card-bg: #1a1a1f;
-      --accent: #00b4ff;
-      --text: #f2f2f2;
-      --muted: #999;
-      --green: #2ecc71;
+      --primary: #8b5cf6;
+      --secondary: #ec4899;
+      --bg: #030712;
+      --surface: #111827;
+      --surface-light: #1f2937;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --success: #34d399;
     }
-
+    * {margin:0;padding:0;box-sizing:border-box;}
     body {
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
       color: var(--text);
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     header {
-      text-align: center;
-      padding: 25px 10px;
-      background: var(--card-bg);
-      box-shadow: 0 2px 10px rgba(0, 180, 255, 0.2);
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(3,7,18,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--surface-light);
+      z-index: 1000;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      letter-spacing: 1px;
-      color: var(--accent);
-      text-transform: uppercase;
-      text-shadow: 0 0 10px var(--accent);
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; padding: 20px;
+      display: flex; justify-content: space-between; align-items: center;
     }
 
-    /* HERO SECTION */
-    .hero {
-      text-align: center;
-      padding: 70px 20px 50px;
-      background: radial-gradient(circle at center, #111 0%, #0a0a0d 80%);
-      animation: fadeIn 1.5s ease;
-    }
+    .brand { font-size: 1.6rem; font-weight: 700; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; color: transparent; }
 
-    .hero img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      box-shadow: 0 0 20px var(--accent);
-      margin-bottom: 25px;
-      animation: float 3s ease-in-out infinite;
-    }
+    .nav-links { display: flex; list-style: none; gap: 30px; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: 0.3s; }
+    .nav-links a:hover { color: var(--primary); }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .hero h2 {
-      font-size: 2.2rem;
-      color: var(--accent);
-      text-shadow: 0 0 8px var(--accent);
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 15px auto 30px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .btn-download {
+    .btn {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 18px;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px var(--accent);
-      text-decoration:none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+      background-image: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: 0.3s;
     }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(236,72,153,0.4); }
 
-    .btn-download:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px var(--accent);
-    }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 60px auto;
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      background: radial-gradient(circle at 30% 20%, rgba(139,92,246,0.15), transparent 70%),
+                  radial-gradient(circle at 70% 80%, rgba(236,72,153,0.1), transparent 70%),
+                  url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      position: relative;
       padding: 0 20px;
     }
 
-    .feature-card {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 12px;
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* FEATURES */
+    section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+    h2.section-title {
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 50px;
+      font-weight: 500;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 40px 25px;
+      text-align: center;
+      transition: 0.4s;
+      border: 1px solid var(--surface-light);
+      position: relative;
     }
 
     .feature-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 20px var(--accent);
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(139,92,246,0.2);
     }
 
-    .feature-card h3 {
-      color: var(--accent);
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .feature-card p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    /* CTA SECTION */
-    .cta {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(90deg, rgba(0,180,255,0.1), rgba(0,180,255,0.05));
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .cta h3 {
-      color: var(--accent);
-      font-size: 24px;
+    .feature-card i {
+      width: 48px; height: 48px; color: var(--primary);
       margin-bottom: 15px;
     }
 
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* HOW IT WORKS (Timeline style) */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(var(--primary), var(--secondary));
+      transform: translateX(-50%);
+    }
+
+    .step {
+      position: relative;
+      width: 50%;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .step:nth-child(odd) { left: 0; text-align: right; }
+    .step:nth-child(even) { left: 50%; }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid white;
+      right: -9px;
+      z-index: 2;
+    }
+
+    .step:nth-child(even)::before { left: -9px; right: auto; }
+
+    .step h3 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; }
+    .step p { color: var(--text-muted); }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(139,92,246,0.2), transparent 60%);
+      padding: 100px 20px;
+    }
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
     .cta p {
-      color: var(--muted);
-      margin-bottom: 25px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 25px 10px;
-      background: var(--card-bg);
-      color: var(--muted);
-      font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 40px 20px;
+      border-top: 1px solid var(--surface-light);
+      background: var(--surface);
     }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .social-icons {
-      margin-top: 15px;
-    }
-
-    .social-icons a {
-      color: var(--accent);
-      font-size: 20px;
+    .social a {
       margin: 0 10px;
+      color: var(--text-muted);
       transition: 0.3s;
     }
+    .social a:hover { color: var(--primary); }
 
-    .social-icons a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px var(--accent);
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .step { width: 100%; text-align: left; left: 0 !important; padding-left: 60px; }
+      .timeline::before { left: 20px; }
+      .step::before { left: 10px !important; }
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Floating button */
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 14px 22px;
+      border-radius: 50px;
+      background-image: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(236,72,153,0.4);
+      z-index: 999;
+      animation: float 2s ease-in-out infinite;
     }
 
-    @media (max-width: 600px) {
-      .hero h2 { font-size: 1.8rem; }
-      .hero p { font-size: 1rem; }
-      .btn-download { font-size: 16px; padding: 12px 24px; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
   </style>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <h1>Qolor Esports</h1>
-</header>
+  <header>
+    <div class="nav-container">
+      <div class="brand">Qolor eSports</div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+      <a href="https://esports.qolor.in/qolor.apk" class="btn">Download</a>
+    </div>
+  </header>
 
-<section class="hero">
-  <img src="20251006_232626.png" alt="Qolor Esports Logo">
-  <h2>Play Daily. Win Big.</h2>
-  <p>Join Free Fire tournaments, compete with real players, and win amazing rewards — right from your fingertips.</p>
-  <a href="https://esports.qolor.in/qolor.apk" target="_blank" class="btn-download">
-    <i class="fa-solid fa-download"></i> Download for Android
-  </a>
-</section>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Play. Compete. Win Rewards.</h1>
+      <p>Welcome to Qolor eSports — the next-generation platform for gamers. Join tournaments, prove your skills, and earn amazing rewards every day.</p>
+      <a href="https://esports.qolor.in/qolor.apk" class="btn">Start Playing</a>
+    </div>
+  </section>
 
-<section class="features">
-  <div class="feature-card">
-    <h3><i class="fa-solid fa-calendar-day"></i> Daily Free Matches</h3>
-    <p>Participate in daily tournaments and test your gaming skills against others.</p>
-  </div>
-  <div class="feature-card">
-    <h3><i class="fa-solid fa-trophy"></i> High Rewards</h3>
-    <p>Win big with low entry fees and massive prize pools. Compete. Win. Celebrate.</p>
-  </div>
-  <div class="feature-card">
-    <h3><i class="fa-solid fa-bolt"></i> Fast Withdrawals</h3>
-    <p>Instant and secure withdrawal of your winnings directly to your wallet.</p>
-  </div>
-  <div class="feature-card">
-    <h3><i class="fa-solid fa-shield-halved"></i> Secure & Fair</h3>
-    <p>We ensure fair gameplay and top-tier security for all Qolor Esports users.</p>
-  </div>
-</section>
+  <section id="features">
+    <h2 class="section-title">Why Choose Qolor eSports</h2>
+    <p class="section-subtitle">Level up your gaming experience with our exciting features</p>
 
-<section class="cta">
-  <h3>🔥 Ready to Join the Arena?</h3>
-  <p>Download the Qolor Esports app today and start your journey to becoming a Free Fire champion!</p>
-  <a href="https://esports.qolor.in/qolor.apk" target="_blank" class="btn-download">
-    <i class="fa-brands fa-android"></i> Get the App Now
-  </a>
-</section>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i data-feather="trophy"></i>
+        <h3>Daily Tournaments</h3>
+        <p>Participate in new challenges and leaderboard battles every day.</p>
+      </div>
+      <div class="feature-card">
+        <i data-feather="gift"></i>
+        <h3>Win Rewards</h3>
+        <p>Earn special in-app rewards and bonuses for your top performances.</p>
+      </div>
+      <div class="feature-card">
+        <i data-feather="users"></i>
+        <h3>Team or Solo Play</h3>
+        <p>Play individually or squad up with your friends for ultimate fun.</p>
+      </div>
+      <div class="feature-card">
+        <i data-feather="zap"></i>
+        <h3>Instant Results</h3>
+        <p>Get real-time match updates, leaderboards, and reward credits instantly.</p>
+      </div>
+      <div class="feature-card">
+        <i data-feather="shield"></i>
+        <h3>Secure Platform</h3>
+        <p>Experience verified tournaments, anti-cheat systems, and fair competition.</p>
+      </div>
+      <div class="feature-card">
+        <i data-feather="message-circle"></i>
+        <h3>24/7 Support</h3>
+        <p>Need help? Our team is always ready to assist across all platforms.</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2025 Qolor Esports • All Rights Reserved<br>
-  Support: <a href="mailto:support@qoloresports.com">support@qoloresports.com</a>
-  <div class="social-icons">
-    <a href="#"><i class="fab fa-discord"></i></a>
-    <a href="#"><i class="fab fa-telegram"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-youtube"></i></a>
-  </div>
-</footer>
+  <section id="how">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">Start earning in just three simple steps</p>
 
+    <div class="timeline">
+      <div class="step">
+        <h3>1. Sign Up</h3>
+        <p>Create your free account and join the Qolor eSports community.</p>
+      </div>
+      <div class="step">
+        <h3>2. Join Matches</h3>
+        <p>Choose your favorite game mode and enter tournaments instantly.</p>
+      </div>
+      <div class="step">
+        <h3>3. Play & Earn</h3>
+        <p>Show off your gaming skills, climb ranks, and unlock special rewards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="download">
+    <h2>Download the Qolor eSports App Now</h2>
+    <p>Join thousands of gamers already playing and winning rewards every day. Don’t miss the next match — start today!</p>
+    <a href="https://esports.qolor.in/qolor.apk" class="btn">Download</a>
+  </section>
+
+  <footer>
+    <p class="brand">Qolor eSports</p>
+    <div class="social">
+      <a href="https://youtube.com/@qolore-sports?si=JAp9evLCvVJO3mxg"><i data-feather="youtube"></i></a>
+      <a href="https://t.me/qoloresports"><i data-feather="send"></i></a>
+      <a href="https://whatsapp.com/channel/0029VavitLe7j6gFqEnPZE0D"><i data-feather="message-circle"></i></a>
+    </div>
+    <p style="color:var(--text-muted);margin-top:10px;">&copy; 2025 Qolor eSports. All rights reserved.</p>
+  </footer>
+
+  <a href="https://esports.qolor.in/qolor.apk" class="floating-btn">Download App</a>
+
+  <script>feather.replace();</script>
 </body>
 </html>
-
-
-
